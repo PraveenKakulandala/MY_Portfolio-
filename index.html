@@ -1,195 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praveen Kekulandala - Animated Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen Kekulandala - Software Engineer Undergraduate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    body, html {
-      font-family: 'Segoe UI', sans-serif;
+    html, body {
       height: 100%;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
     }
     body {
-      color: white;
-      background-color: #000;
-    }
-    .background {
       background: url('121.png') no-repeat center center fixed;
       background-size: cover;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      filter: brightness(0.3);
+      overflow-x: hidden;
     }
     .overlay {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
       height: 100%;
-      backdrop-filter: blur(8px);
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: -1;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
     header {
-      position: fixed;
-      width: 100%;
+      position: relative;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ffd700;
+    }
+    nav {
+      position: sticky;
       top: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 3rem;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 100;
-      animation: fadeInDown 1s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+      z-index: 5;
     }
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
     nav a:hover {
       color: #ffd700;
     }
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      animation: zoomIn 2s ease;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      animation: fadeInUp 1s ease forwards;
-    }
-    .hero p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin-top: 1rem;
-      animation: fadeInUp 2s ease forwards;
-    }
     section {
-      padding: 6rem 10% 3rem;
+      padding: 4rem 10%;
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 1rem;
-      margin: 4rem auto;
-      width: 90%;
-      color: #fff;
-      animation: fadeIn 1.5s ease forwards;
+      margin: 2rem auto;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      z-index: 1;
+      position: relative;
     }
-    h2.section-title {
-      font-size: 2.5rem;
-      border-left: 6px solid #ffd700;
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #ffd700;
       padding-left: 1rem;
-      margin-bottom: 2rem;
     }
     .card {
-      background: rgba(255,255,255,0.07);
-      padding: 2rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
-      animation: fadeInUp 1s ease;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
       transition: transform 0.3s ease;
     }
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
+    }
+    .github-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ffd700;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .github-btn:hover {
+      background: #ffcc00;
     }
     footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      animation: fadeInUp 2s ease;
     }
     .social-icons a {
       color: white;
-      margin: 0 1rem;
+      margin: 0 0.5rem;
       font-size: 1.5rem;
       text-decoration: none;
-      transition: color 0.3s ease;
     }
-    .social-icons a:hover {
-      color: #ffd700;
-    }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes zoomIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1rem; }
+    .contact-section, .reference-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
   <div class="overlay"></div>
-
   <header>
-    <h2>Praveen K.</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Praveen Kakulandala</h1>
+    <p>Software Engineering Undergraduate, NSBM Green University</p>
   </header>
 
-  <div class="hero">
-    <h1>Hello, I'm Praveen 👋</h1>
-    <p>Aspiring Software Engineer Intern — I build meaningful digital experiences with creativity and code.</p>
-  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="#reference">Reference</a>
+  </nav>
 
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="card">
-      <p>I'm a Software Engineering undergraduate at NSBM Green University. Passionate about full-stack development, I'm proficient in Java, Flutter, ASP.NET, and MySQL. I love building apps that solve real problems, and I'm always eager to learn and grow with teams that share the same passion.</p>
+      <p>I'm a detail-oriented undergraduate in Software Engineering from NSBM Green University. I specialize in full-stack web and mobile development and thrive in collaborative environments with a drive for building real-world applications.</p>
     </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects</h2>
+
     <div class="card">
       <h3>ACloth Shop</h3>
-      <p>Web-based shopping system using Java Servlets, HTML/CSS, and MySQL. Includes cart and transaction features with team collaboration.</p>
+      <p>Web-based Shopping Management System built with Java, HTML/CSS/JS, Servlets, MySQL. Features product browsing, cart, and transactions.</p>
+      <a class="github-btn" href="https://github.com/PraveenKakulandala/ACloth-Shop" target="_blank">View on GitHub</a>
     </div>
+
     <div class="card">
       <h3>Luxury Wear Store</h3>
-      <p>Auction management system built with C#, ASP.NET, and SQL. Provides seamless user interactions on a local deployment.</p>
+      <p>Auction system for luxury wear using C#, ASP.NET, HTML/CSS, and SQL. Developed features for product listing and bidding.</p>
+      <a class="github-btn" href="https://github.com/PraveenKakulandala/Luxury-Wear-Store" target="_blank">View on GitHub</a>
     </div>
+
     <div class="card">
       <h3>Do.lk</h3>
-      <p>Mobile freelance service platform using Flutter, Firebase, Node.js. Connects professionals with customers. <a href="https://bit.ly/3Hi2MPo" target="_blank" style="color:#ffd700">View Project</a></p>
+      <p>Mobile freelancing app using Flutter, Dart, Firebase, MySQL. Connects local service providers with customers for diverse categories.</p>
+      <a class="github-btn" href="https://bit.ly/3Hi2MPo" target="_blank">View Demo</a>
     </div>
+
   </section>
 
   <section id="skills">
-    <h2 class="section-title">Skills & Tools</h2>
+    <h2 class="section-title">Technical Skills</h2>
     <div class="card">
       <p><strong>Languages:</strong> Java, C#, C, Dart, PHP, JavaScript</p>
       <p><strong>Frameworks:</strong> Flutter, ASP.NET, React</p>
@@ -199,17 +174,24 @@
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-    <div class="card">
+    <h2 class="section-title">Contact</h2>
+    <div class="card contact-section">
       <p><strong>Email:</strong> praveenkekulandala@gmail.com</p>
-      <p><strong>Phone:</strong> +94 7719 21220</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank" style="color:#ffd700">Praveen Kakulandala</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/PraveenKakulandala" target="_blank" style="color:#ffd700">@PraveenKakulandala</a></p>
+      <p><strong>Mobile:</strong> +94 7719 21220</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" style="color:#ffd700;" target="_blank">Praveen Kakulandala</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/PraveenKakulandala" style="color:#ffd700;" target="_blank">@PraveenKakulandala</a></p>
+    </div>
+  </section>
+
+  <section id="reference">
+    <h2 class="section-title">References</h2>
+    <div class="card reference-section">
+      <p><strong>Mohomed Rushdi Hadhi</strong><br>Director Operations – Jobdaddy<br>Email: bfstrushdi@gmail.com<br>Phone: +94 776 508 220</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Praveen Kekulandala — Designed with 💛 and HTML</p>
+    <p>© 2025 Praveen Kakulandala</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/PraveenKakulandala" target="_blank"><i class="fab fa-github"></i></a>
