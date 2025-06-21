@@ -1,171 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praveen Kekulandala - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f5f0e6; /* Cream background */
-            color: #000;
-        }
-
-        header {
-            background-color: #222;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffd700; /* Gold highlight */
-        }
-
-        .hero {
-            background-image: url('121.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            text-shadow: 0 0 8px #000;
-        }
-
-        .hero h2 {
-            font-size: 4em;
-            color: white;
-            animation: fadeInUp 1.5s ease;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            color: #ddd;
-            margin-top: 1rem;
-            animation: fadeInUp 2s ease;
-        }
-
-        .section {
-            padding: 5rem 10%;
-            background-color: #fff;
-        }
-
-        .section h3 {
-            font-size: 2.5em;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .project-card {
-            border: 1px solid #ccc;
-            padding: 1rem;
-            border-radius: 1rem;
-            background-color: #fefefe;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 2rem 10%;
-            text-align: center;
-        }
-
-        .social-links a {
-            color: white;
-            margin: 0 1rem;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ffd700;
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 2.5em; }
-            .hero p { font-size: 1.2em; }
-            header { flex-direction: column; align-items: flex-start; }
-            nav { margin-top: 1rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praveen Kekulandala - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f5ec;
+      color: #000;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: url('121.png') center/cover no-repeat;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 4rem 10%;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #222;
+      display: inline-block;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .skills, .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .skills div, .contact-info div {
+      flex: 1 1 30%;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Praveen Kekulandala</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Praveen Kekulandala</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <h2>Software Engineer Intern Hunter</h2>
-        <p>Building solutions with passion & precision.</p>
-    </section>
+  <section class="hero">
+    <h1>SOFTWARE ENGINEER INTERN</h1>
+    <p>Based in Horepola, Godakawela, Rathnapura</p>
+  </section>
 
-    <section id="about" class="section">
-        <h3>About Me</h3>
-        <p>Hello! I'm Praveen Kekulandala, a software engineering undergraduate passionate about web development and problem-solving. I specialize in crafting responsive, clean websites using HTML, CSS, JavaScript, and backend technologies like Java and MySQL.</p>
-    </section>
+  <section id="about">
+    <h2 class="section-title">Summary</h2>
+    <div class="card">
+      <p>Detail-oriented Software Engineering undergraduate at NSBM Green University, with hands-on experience in full-stack web and mobile development. Proficient in Java, Flutter, C#, and SQL, with a strong passion for solving real-world problems. Proven track record in collaborative team environments and agile development. Seeking a software engineering internship where I can contribute to impactful products.</p>
+    </div>
+  </section>
 
-    <section id="projects" class="section">
-        <h3>My Projects</h3>
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <p><strong>BSc (Honors) in Software Engineering - NSBM Green University</strong> (2022 - Present)</p>
+      <p><strong>G C E Advanced Level – Gankanda Central College</strong> (2020)</p>
+      <p><strong>G C E Ordinary Level – Gankanda Central College</strong> (2016)</p>
+    </div>
+  </section>
 
-        <div class="project-card">
-            <h4>Luxury Wear Store</h4>
-            <p>A full-stack e-commerce site using Java Servlets, HTML/CSS/JS, and MySQL. Features include product browsing, cart management, and admin tools.</p>
-        </div>
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
 
-        <div class="project-card">
-            <h4>ACloth Shop</h4>
-            <p>Web-based shopping management system designed with Java technologies and SQL. Allows customers to interact with a local database-backed catalog.</p>
-        </div>
+    <div class="card">
+      <h3>ACloth Shop</h3>
+      <p>Web Based Shopping Management System using Java, HTML/CSS/JS, Java Servlets, MySQL. Implemented browsing, cart, transactions, and team collaboration.</p>
+    </div>
 
-    </section>
+    <div class="card">
+      <h3>Luxury Wear Store</h3>
+      <p>Web Auction Management System with C#, HTML/CSS/JS, MySQL, ASP.NET. Enabled seamless user interaction and local server deployment.</p>
+    </div>
 
-    <footer id="contact">
-        <p>Connect with me</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/PraveenKakulandala" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Praveen_15962" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="mailto:praveenkekulandala@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
+    <div class="card">
+      <h3>Do.lk</h3>
+      <p>Mobile freelancing platform using Flutter, Dart, Firebase, MySQL, Node.js, PHP. Connects service providers with customers in various categories. <a href="https://bit.ly/3Hi2MPo" target="_blank">View Project</a></p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="card skills">
+      <div>
+        <h4>Languages</h4>
+        <p>Java, C#, C, JavaScript, PHP, Dart</p>
+      </div>
+      <div>
+        <h4>Frameworks/Libraries</h4>
+        <p>Flutter, ASP.NET, React</p>
+      </div>
+      <div>
+        <h4>Databases</h4>
+        <p>MySQL, Firebase, SQL</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <p>Figma, Git, VS Code, Postman, Android Studio, Eclipse</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact & References</h2>
+    <div class="card contact-info">
+      <div>
+        <p><strong>Email:</strong> praveenkekulandala@gmail.com</p>
+        <p><strong>Mobile:</strong> +94 7719 21220</p>
+      </div>
+      <div>
+        <p><strong>LinkedIn:</strong> Praveen Kakulandala</p>
+        <p><strong>GitHub:</strong> PraveenKakulandala</p>
+      </div>
+      <div>
+        <p><strong>Reference:</strong> Mohomed Rushdi Hadhi<br>Director Operations – Jobdaddy<br>Email: bfstrushdi@gmail.com<br>Phone: +94 776 508 220</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Praveen Kekulandala</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/PraveenKakulandala" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/Praveen_15962" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
