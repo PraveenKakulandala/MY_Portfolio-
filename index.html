@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praveen Kekulandala - Creative Portfolio</title>
+  <title>Praveen Kekulandala - Animated Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
@@ -14,34 +14,45 @@
     body, html {
       font-family: 'Segoe UI', sans-serif;
       height: 100%;
-      width: 100%;
       overflow-x: hidden;
     }
     body {
       color: white;
+      background-color: #000;
     }
     .background {
       background: url('121.png') no-repeat center center fixed;
       background-size: cover;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
+      z-index: -2;
+      filter: brightness(0.3);
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.4);
       z-index: -1;
-      filter: brightness(0.4);
     }
     header {
+      position: fixed;
+      width: 100%;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 3rem;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 10;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 100;
+      animation: fadeInDown 1s ease-in-out;
     }
     nav a {
-      color: #fff;
+      color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
@@ -57,25 +68,26 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
-      animation: fadeIn 2s ease;
+      animation: zoomIn 2s ease;
     }
     .hero h1 {
       font-size: 4rem;
-      margin-bottom: 0.5rem;
+      animation: fadeInUp 1s ease forwards;
     }
     .hero p {
       font-size: 1.5rem;
       max-width: 600px;
+      margin-top: 1rem;
+      animation: fadeInUp 2s ease forwards;
     }
     section {
       padding: 6rem 10% 3rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 1rem;
-      margin: 3rem auto;
+      margin: 4rem auto;
       width: 90%;
       color: #fff;
+      animation: fadeIn 1.5s ease forwards;
     }
     h2.section-title {
       font-size: 2.5rem;
@@ -84,10 +96,12 @@
       margin-bottom: 2rem;
     }
     .card {
-      background: rgba(255,255,255,0.1);
-      padding: 1.5rem;
+      background: rgba(255,255,255,0.07);
+      padding: 2rem;
       border-radius: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      animation: fadeInUp 1s ease;
       transition: transform 0.3s ease;
     }
     .card:hover {
@@ -96,18 +110,35 @@
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
       color: #fff;
+      animation: fadeInUp 2s ease;
     }
     .social-icons a {
       color: white;
       margin: 0 1rem;
       font-size: 1.5rem;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #ffd700;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
@@ -117,6 +148,7 @@
 </head>
 <body>
   <div class="background"></div>
+  <div class="overlay"></div>
 
   <header>
     <h2>Praveen K.</h2>
@@ -129,14 +161,14 @@
   </header>
 
   <div class="hero">
-    <h1>SOFTWARE ENGINEER INTERN</h1>
-    <p>Turning ideas into digital solutions — with passion and precision</p>
+    <h1>Hello, I'm Praveen 👋</h1>
+    <p>Aspiring Software Engineer Intern — I build meaningful digital experiences with creativity and code.</p>
   </div>
 
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="card">
-      <p>Detail-oriented Software Engineering undergraduate at NSBM Green University. Passionate about creating smart solutions using Java, Flutter, and ASP.NET. Strong in backend development and collaborative projects. Eager to intern and build real-world impact.</p>
+      <p>I'm a Software Engineering undergraduate at NSBM Green University. Passionate about full-stack development, I'm proficient in Java, Flutter, ASP.NET, and MySQL. I love building apps that solve real problems, and I'm always eager to learn and grow with teams that share the same passion.</p>
     </div>
   </section>
 
@@ -144,41 +176,40 @@
     <h2 class="section-title">Projects</h2>
     <div class="card">
       <h3>ACloth Shop</h3>
-      <p>Shopping system using Java Servlets, HTML/CSS, and MySQL. Includes cart, transaction features, and team collaboration.</p>
+      <p>Web-based shopping system using Java Servlets, HTML/CSS, and MySQL. Includes cart and transaction features with team collaboration.</p>
     </div>
     <div class="card">
       <h3>Luxury Wear Store</h3>
-      <p>Auction platform built with C#, ASP.NET, HTML/CSS, and SQL. Enabled browsing and bidding via local server hosting.</p>
+      <p>Auction management system built with C#, ASP.NET, and SQL. Provides seamless user interactions on a local deployment.</p>
     </div>
     <div class="card">
       <h3>Do.lk</h3>
-      <p>Freelancing mobile app using Flutter, Dart, Firebase, Node.js. Matches local service providers to customer needs.<br><a href="https://bit.ly/3Hi2MPo" target="_blank" style="color:#ffd700">View Project</a></p>
+      <p>Mobile freelance service platform using Flutter, Firebase, Node.js. Connects professionals with customers. <a href="https://bit.ly/3Hi2MPo" target="_blank" style="color:#ffd700">View Project</a></p>
     </div>
   </section>
 
   <section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
+    <h2 class="section-title">Skills & Tools</h2>
     <div class="card">
-      <strong>Languages:</strong> Java, C#, C, JavaScript, PHP, Dart<br>
-      <strong>Frameworks:</strong> Flutter, ASP.NET, React<br>
-      <strong>Databases:</strong> MySQL, Firebase<br>
-      <strong>Tools:</strong> Git, VS Code, Postman, Android Studio, Eclipse, Figma
+      <p><strong>Languages:</strong> Java, C#, C, Dart, PHP, JavaScript</p>
+      <p><strong>Frameworks:</strong> Flutter, ASP.NET, React</p>
+      <p><strong>Databases:</strong> MySQL, Firebase</p>
+      <p><strong>Tools:</strong> Git, Figma, VS Code, Postman, Android Studio, Eclipse</p>
     </div>
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Contact & Reference</h2>
+    <h2 class="section-title">Let's Connect</h2>
     <div class="card">
       <p><strong>Email:</strong> praveenkekulandala@gmail.com</p>
       <p><strong>Phone:</strong> +94 7719 21220</p>
-      <p><strong>LinkedIn:</strong> Praveen Kakulandala</p>
-      <p><strong>GitHub:</strong> PraveenKakulandala</p>
-      <p><strong>Reference:</strong> Mr. Mohomed Rushdi Hadhi - Director Operations, Jobdaddy<br>Email: bfstrushdi@gmail.com | +94 776 508 220</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank" style="color:#ffd700">Praveen Kakulandala</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/PraveenKakulandala" target="_blank" style="color:#ffd700">@PraveenKakulandala</a></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Praveen Kekulandala</p>
+    <p>© 2025 Praveen Kekulandala — Designed with 💛 and HTML</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/praveen-kakulandala-623103255/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/PraveenKakulandala" target="_blank"><i class="fab fa-github"></i></a>
